@@ -19,7 +19,7 @@ mmk <- function(lambda, y, parms){
 #E1 = 0.000079433
 #E2 = 0.0003283
 
-yi <- c(y1 = 1, y2 = 0, y3 = 0, y4 = 0, y5 = 0)
+yi <- c(y1 = 1, y2 = 0, y3 = 0, y4 = 0, y5 = 1)
 lambda <- seq(0,1,0.01)
 #lambda = 1
 time = seq(0,1,0.01)
@@ -27,7 +27,7 @@ time = seq(0,1,0.01)
 out <- ode(times = time, y = yi, func = mmk, parms = NULL)
 
 head (out, n=100) 
-plot(out)
+#plot(out)
 plot(out[,'time'], out[,'y1'])
 #plot(out[,'time'], out[,'y5'])
 plot(lambda, out[,'y5'])
